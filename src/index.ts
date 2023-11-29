@@ -31,9 +31,9 @@ app.post('/', async (req: Request, res: Response, next: NextFunction) => {
             const name = (req.body as Registrant).name;
             const { data } = await postgrest.from(SUPABASE_TABLENAME).insert({name: name}).select();
             const created = data![0];
-            res.render('home', {registered: "true", number: created.id, name: created.name})
+            res.render('home', {data: {registered: "true", number: created.id, name: created.name}})
         } else {
-            res.render('home', {error: "Something went wrong! Please let Brad know!"})
+            res.render('home', {data: {error: "Something went wrong! Please let Brad know!"}})
         }
     } catch(e) {
         next(e);
