@@ -1,0 +1,20 @@
+<div class="container">
+  {{#if registered}}
+  <div class="message is-success">
+    <div class="message-body">
+      Thanks {{name}}! You're registered. Your number is {{number}}. Please write this on a Post-it note and place this
+      number visibily near your chili.
+    </div>
+  </div>
+  {{/if}}
+  <h1 class="title">
+    Welcome to the Chili Cookoff.
+  </h1>
+  <p class="subtitle">
+    Please enter your name.
+  </p>
+  <form action="/" method="post">
+    <input type="text" id="name" name="name" />
+    <button type="submit">Submit</button>
+  </form>
+</div>
