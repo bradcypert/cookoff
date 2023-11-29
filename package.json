@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "tsc",
+    "build": "tsc && cp ./src/views ./dist/views",
     "serve": "node dist/index.js"
   },
   "repository": {
