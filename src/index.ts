@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { engine } from 'express-handlebars';
 import { PostgrestClient } from '@supabase/postgrest-js'
+import path from 'path';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,7 +18,7 @@ postgrest.headers['apikey'] = SUPABASE_API_KEY;
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+app.set('views', path.resolve(__dirname, "./views"));
 app.use(express.json())
 
 app.get('/', (req: Request, res: Response) => {
