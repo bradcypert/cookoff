@@ -19,7 +19,8 @@ postgrest.headers['apikey'] = SUPABASE_API_KEY;
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname, "./views"));
-app.use(express.json())
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.get('/', (req: Request, res: Response) => {
     res.render('home');
