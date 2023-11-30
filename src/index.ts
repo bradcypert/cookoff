@@ -35,12 +35,13 @@ app.post('/', async (req: Request, res: Response, next: NextFunction) => {
             const { data } = await postgrest.from(SUPABASE_TABLENAME).insert({name: name}).select();
             console.log("Got data back from supabase", data);
             const created = data![0];
-            res.render('home', {data: {registered: "true", number: created.id, name: created.name}})
+            res.render('home', {registered: "true", number: created.id, name: created.name});
         } else {
-            res.render('home', {data: {error: "Something went wrong! Please let Brad know!"}})
+            res.render('home', {error: "Something went wrong! Please let Brad know!"});
         }
     } catch(e) {
         console.error(e);
+        res.render('home', {error: "Something went wrong! Please let Brad know!"});
         next(e);
     } 
 })
