@@ -43,6 +43,10 @@ app.post('/', async (req: Request, res: Response, next: NextFunction) => {
         next(e);
     } 
 })
+
+app.get('/vote', (req: Request, res: Response) => {
+    res.redirect("https://docs.google.com/forms/d/1Fuhja6hA_gIb6rscr4slsPGjwsEXf1fcgA_Q2Z-Qfa8/edit");
+});
   
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
