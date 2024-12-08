@@ -45,7 +45,7 @@ app.post('/', async (req: Request, res: Response, next: NextFunction) => {
 })
 
 app.get('/vote', (req: Request, res: Response) => {
-    res.redirect("https://docs.google.com/forms/d/1Fuhja6hA_gIb6rscr4slsPGjwsEXf1fcgA_Q2Z-Qfa8/edit")
+    res.redirect("https://forms.gle/kxeivYDSLFkynCeK8")
 });
   
 app.listen(port, () => {
